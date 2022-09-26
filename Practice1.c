@@ -53,7 +53,7 @@ char *get_str(void){
 			k = k + MEMORY - 1;
 			str = (char*)realloc(str, sizeof(char*) * (k + MEMORY));
 			if(!str) return NULL;
-		}else{
+		} else{
 			str[len-1] = '\0';
 			return str;
 		}
