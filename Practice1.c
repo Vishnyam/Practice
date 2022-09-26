@@ -1,23 +1,24 @@
 /*
-	Строки вводятся до ctrl+d; все пустые строки выводятся в начале; 
-	пробелы имеют приоритет выше буквы/цифры
+	String entry ends with ctrl+d;
+        All empty strings are output with the beginning
 */
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#define memory 10
+#define MEMORY 10
 
-char *get_str(void); //функция ввода строки
-void out_str(char**pointer, int i); //функция вывода строки 
-int compare(char* str1, char* str2); //функция сравнения строк
-void sort(char **pointer, int n);//сортировка простыми вставками
-void freedom(char**pointer, int i);//функция освобождения памяти
+char *get_str(void); // string entry function
+void out_str(char**pointer, int i); //string output function
+int compare(char* str1, char* str2); //string comparison
+void sort(char **pointer, int n);//string sort function
+void freedom(char**pointer, int i);//memory release function
 
 int compare(char* str1, char* str2){
 	int minlen, flag = 0;
 	if (strlen(str1) > strlen(str2)) minlen = strlen(str2);
-	else minlen = strlen(str1);
+	else 
+                minlen = strlen(str1);
 	for (int i = 0; i < minlen; ++i)
 		if (str1[i] != str2[i]){
 			if (str1[i] > str2[i]) return 1;
@@ -44,20 +45,19 @@ void sort(char **pointer, int n){
 
 char *get_str(void){
 	int len, k = 0;
-	char *str = malloc(sizeof(char*) * memory);
+	char *str = malloc(sizeof(char*) * MEMORY);
 	if(!str) return NULL;
-	while(fgets(str + k, memory, stdin)){
+	while(fgets(str + k, MEMORY, stdin)){
 		len = strlen(str);
 		if(str[len - 1] != '\n'){
-			k = k + memory - 1;
-			str = (char*)realloc(str, sizeof(char*) * (k + memory));
+			k = k + MEMORY - 1;
+			str = (char*)realloc(str, sizeof(char*) * (k + MEMORY));
 			if(!str) return NULL;
-		}
-		else{
+		}else{
 			str[len-1] = '\0';
 			return str;
 		}
-		}
+	}
 	free(str);
 	return NULL;
 }
