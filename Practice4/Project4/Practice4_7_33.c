@@ -15,7 +15,7 @@ int main(int argc, char **argv){
 		fclose(f1);
 		return 0;
 	}
-        fseek (f, 0, SEEK_SET);
+        fseek (f1, 0, SEEK_SET);
 	while(fgets(str, len, f1))
 		fputs(str, f2);
 	fclose(f1);
