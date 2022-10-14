@@ -57,8 +57,7 @@ void freedom(List *pointer){
 		free(pointer);
 		free(follow->s);
 		free(follow);
-	}
-	else{
+	} else {
 		free(pointer->s);
 		free(pointer);
 	}
@@ -87,7 +86,7 @@ int main(){
 			}
 			p->s = str;
 			if (head->next == NULL){
-				if(strcmp(head->s,str) > 0){
+				if (strcmp(head->s,str) > 0){
 					p->next = head;
 					head = p;
 				} else {
