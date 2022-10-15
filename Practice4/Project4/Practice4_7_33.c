@@ -10,7 +10,7 @@ int main(int argc, char **argv){
 	if(f2 == NULL) return 0;
 	int len = atoi(argv[2]);
 	char *str = malloc(sizeof(char) * (len + 1));
-        if((str = get_str(f1)) == NULL){
+        if((fgets(str, len, f1)) == NULL){
 		printf("%s\n", "Empty file");
 		fclose(f1);
 		return 0;
