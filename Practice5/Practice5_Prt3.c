@@ -1,11 +1,11 @@
 /*
-	перенаправление ввода-вывода : конвейер < файл > файл &
-	< ввод
-	> вывод
+	I/O redirection : conveir < file > file &
+	< input
+	> output
 	
 	1.	execute_background &
 	2.	execute_redir < > >>
-	3. 	execute фон
+	3. 	execute (background) 
 	4. 	execute_conv | |
 */
 
