@@ -126,7 +126,7 @@ char **split(char *str){
 					}
 
 				} else if ((str[i] == ';') || (str[i] == '<') || (str[i] == '(') || (str[i] == ')')) {
-					if (double_flag || (buf_str)) {
+					if ((double_flag) || (buf_str != '\0')) {
 						double_flag = 0;
 						buf_str[i - j_buf] = '\0';
 						j_buf = i;
