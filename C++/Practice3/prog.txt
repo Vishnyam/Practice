@@ -3,9 +3,9 @@ program
 	write("Hello world!");
 	real r = 3.4;
 	int a =1, b = 5;
-	while(a < b){
+	do {
 		a = a + 1;
-	}
+	} while(a < b);
 	write(a);
 	
 }
