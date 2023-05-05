@@ -1,11 +1,12 @@
 program
 {
-	write("Hello world!");
-	real r = 3.4;
-	int a =1, b = 5;
-	while(a < b){
-		a = a + 1;
-	}
-	write(a);
-	
+	real r = 0.2;
+	int a = 2, b = 0;
+	string s1 = "aaa", s2 = "bbbbbbb";
+	do{
+		b = b + 1;
+		continue;
+		
+	} while (b < a);
+	write(b);
 }
